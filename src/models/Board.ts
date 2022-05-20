@@ -21,5 +21,8 @@ export class Board {
 
     public addFigures(){
         new Queen(this.getCell(3, 7), Colors.WHITE)
+        new Queen(this.getCell(3, 0), Colors.BLACK)
+        // new Queen(this.getCell(3, 7), Colors.WHITE)
+
     }
 }
