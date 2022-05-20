@@ -1,5 +1,4 @@
 import { Colors } from "../Colors";
-import logo from "../../assets/black-king.png"
 import { Cell } from "../Cell";
 
 export enum FigureNames {
@@ -14,7 +13,7 @@ export enum FigureNames {
 
 export class Figure{
     color: Colors;
-    logo: typeof logo | null;
+    logo: string | null;
     cell: Cell;
     name: FigureNames;
     id: number;
