@@ -12,4 +12,9 @@ export class Bishop extends Figure{
         this.name = FigureNames.BISHOP;
     }
 
+    canMove(target: Cell): boolean {
+        if(!super.canMove(target))
+            return false;
+        return true;
+    }
 }
