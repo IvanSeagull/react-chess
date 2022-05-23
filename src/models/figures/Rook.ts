@@ -4,6 +4,7 @@ import { Colors } from "../Colors";
 
 import blackLogo from "../../assets/black-rook.png"
 import whiteLogo from "../../assets/white-rook.png"
+import { Board } from "../Board";
 
 export class Rook extends Figure{
     constructor(cell: Cell, color: Colors){
@@ -12,8 +13,8 @@ export class Rook extends Figure{
         this.name = FigureNames.ROOK;
     }
 
-    canMove(target: Cell): boolean {
-        if(!super.canMove(target)) return false;
+    canMove(target: Cell, board : Board): boolean {
+        if(!super.canMove(target, board)) return false;
 
         if(this.cell.isEmptyVertical(target)) return true
 

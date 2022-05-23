@@ -40,7 +40,7 @@ export class Board {
             const row = this.cells[i]
             for(let j = 0; j < row.length; j++){
                 const target = row[j]
-                target.available = !!selectedCell?.figure?.canMove(target)
+                target.available = !!selectedCell?.figure?.canMove(target, this)
             }
             
         }

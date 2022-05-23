@@ -4,6 +4,7 @@ import { Colors } from "../Colors";
 
 import blackLogo from "../../assets/black-queen.png"
 import whiteLogo from "../../assets/white-queen.png"
+import { Board } from "../Board";
 
 export class Queen extends Figure{
 
@@ -13,8 +14,8 @@ export class Queen extends Figure{
         this.name = FigureNames.QUEEN;
     }
 
-    canMove(target: Cell): boolean {
-        if(!super.canMove(target)) return false;
+    canMove(target: Cell, board: Board): boolean {
+        if(!super.canMove(target, board)) return false;
 
         if(this.cell.isEmptyVertical(target)) return true;
 

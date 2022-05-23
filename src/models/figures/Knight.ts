@@ -5,6 +5,7 @@ import { Colors } from "../Colors";
 
 import blackLogo from "../../assets/black-knight.png"
 import whiteLogo from "../../assets/white-knight.png"
+import { Board } from "../Board";
 
 
 export class Knight extends Figure{
@@ -14,8 +15,8 @@ export class Knight extends Figure{
         this.name = FigureNames.KNIGHT;
     }
 
-    canMove(target: Cell): boolean {
-        if(!super.canMove(target)) return false;
+    canMove(target: Cell, board: Board): boolean {
+        if(!super.canMove(target, board)) return false;
 
         const dx = Math.abs(this.cell.x - target.x);
         const dy = Math.abs(this.cell.y - target.y);

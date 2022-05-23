@@ -1,6 +1,6 @@
 import { Board } from "./Board";
 import { Colors } from "./Colors";
-import { Figure } from "./figures/Figure";
+import { Figure, FigureNames } from "./figures/Figure";
 
 export class Cell{
     readonly x:number;
@@ -24,6 +24,10 @@ export class Cell{
 
     isEmpty() : boolean{
         return this.figure === null;
+    }
+
+    isRook(color: Colors) : boolean{
+        return this.figure?.name === FigureNames.ROOK && this.figure?.color === color
     }
 
     isEnemy(target: Cell): boolean{
@@ -90,7 +94,7 @@ export class Cell{
     }
 
     moveFigure(target: Cell){
-        if(this.figure && this.figure?.canMove(target)){
+        if(this.figure && this.figure?.canMove(target, this.board)){
             this.figure.moveFigure(target)
             if(target.figure){
                 this.addLostFigure(target.figure)
